@@ -6,3 +6,4 @@ dill==0.2.1
 Flask==0.12.3
 Jinja2==2.7.2
 requests>=2.2.1
+numpy==1.9.2
