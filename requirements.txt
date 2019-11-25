@@ -5,7 +5,7 @@ Quandl==3.3.0
 pandas==0.22.0
 bokeh==0.12.13
 dill==0.2.7.1
-flask==0.12.3
+flask==1.0
 jinja2==2.10
 pip==10.0.1
 
