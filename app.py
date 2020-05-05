@@ -62,7 +62,8 @@ def graph():
 	now = datetime.now()
 	current_time = now.strftime("%m/%d/%Y ")
 	tag = app.vars['tag']
-	app.vars['tag'] = f'{tag}. Generated on {current_time}'
+	if 'Generated' not in app.vars['tag']:
+		app.vars['tag'] = f'{tag}. Generated on {current_time}'
 
 	app.vars['desc'] = r.json()['dataset']['name'].split(',')[0]
 	
