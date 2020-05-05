@@ -7,6 +7,7 @@ import bokeh
 from bokeh.plotting import figure
 from bokeh.io import show
 from bokeh.embed import components
+from datetime import datetime
 bv = bokeh.__version__
 
 
@@ -32,8 +33,10 @@ def index():
 		app.vars['start_year'] = request.form['year']
 		try: 
 			int(app.vars['start_year'])
-			app.vars['tag'] = 'Data specified for %s in %s' % (app.vars['ticker'],app.vars['start_year'])
-		except ValueError: 
+			ticker = app.vars['ticker']
+			start_year = app.vars['start_year']
+			app.vars['tag'] = f'Data specified for {ticker} in {start_year}'
+		except ValueError:
 			app.vars['start_year'] = ''
 			app.vars['tag'] = 'Start year not specified/recognized'
 		app.vars['select'] = [feat[q] for q in range(3) if feat[q] in request.form.values()]
@@ -56,6 +59,11 @@ def graph():
 	if not app.vars['start_year']=='':
 		if df.Date.iloc[-1].year>int(app.vars['start_year']):
 			app.vars['tag'] = '%s, but Quandl record begins in %s' % (app.vars['tag'],df.Date.iloc[-1].year)
+	now = datetime.now()
+	current_time = now.strftime("%m/%d/%Y ")
+	tag = app.vars['tag']
+	app.vars['tag'] = f'{tag}. Generated on {current_time}'
+
 	app.vars['desc'] = r.json()['dataset']['name'].split(',')[0]
 	
 	
