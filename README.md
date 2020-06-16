@@ -1,12 +1,12 @@
 # Flask on Heroku
 
-This Stock Price Milestone project is intended to help me tie together some important concepts and
-technologies from the 12-day course prepatory course for the Data Incubator Fellowship including Git, Flask, JSON, Pandas,
+This Stock Price Milestone project is intended to help me tie together some important concepts including Git, Flask, JSON, Pandas,
 Requests, Heroku, and Bokeh for visualization.
 
 The repository contains a basic template for a Flask configuration that will
 work on Heroku.
 
+## Demo
 My [finished example](https://davida-tdi-stockprice.herokuapp.com/index) that demonstrates some basic functionality. 
 
 ## Step 1: Setup and deploy
@@ -40,3 +40,5 @@ My [finished example](https://davida-tdi-stockprice.herokuapp.com/index) that de
 - Make the plot visible on your website through embedded HTML or other methods - this is where Flask comes in to manage the interactivity and display the desired content.
 - Some good references for Flask: [This article](https://realpython.com/blog/python/python-web-applications-with-flask-part-i/), especially the links in "Starting off", and [this tutorial](https://github.com/bev-a-tron/MyFlaskTutorial).
 
+
+[MIT License](https://github.com/davidpofo/Quandl-Stock-Price/blob/master/LICENSE)
